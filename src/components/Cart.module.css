@@ -1,0 +1,33 @@
+.itemcard {
+  justify-content: space-between;
+  text-align: left;
+  display: flex;
+  gap: 0.6rem;
+  border: var(--primary-soft) 1px solid;
+  border-radius: 10px;
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.itemcard img {
+  height: 250px;
+}
+
+.itemname {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-h);
+  padding-bottom: 5px;
+}
+
+.desc {
+  font-size: 0.8rem;
+  font-weight: 400;
+  line-height: 1;
+  padding-bottom: 5px;
+}
+
+.price {
+  font-size: 1.2rem;
+}
