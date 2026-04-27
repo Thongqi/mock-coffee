@@ -8,9 +8,15 @@ export function Shop() {
   const { products, error, loading } = useProducts();
   const [cart, setCart] = useOutletContext();
 
-  function handleAddtoCard(id) {
-    console.log(id);
-    setCart((prev) => [...prev, id]);
+  function handleAddtoCard(product) {
+
+    if(cart.some((item)=> item.itemID === product.itemID)){
+      setCart((prev) => 
+        prev.map((item) => 
+          item.itemID === product.itemID ? {...item, quantity: item.quantity? item.quantity+1: 2} : item
+        )
+      )
+    } else setCart((prev) => [...prev, product]);
   }
 
   if (loading) return <p>Preparing your dishes…</p>;
