@@ -1,18 +1,32 @@
 :root {
-  --bg: #fffaf5; /* warm off-white */
-  --primary: #9d0208; /* deep red */
-  --primary-soft: #c1121f; /* lighter red (hover, highlights) */
-  --accent: #e9c46a; /* gold */
-  --accent-soft: #f4a261; /* softer gold/orange */
+  --bg: #0f2a2e;
+  --bg-secondary: #1b3b40; /* deep teal (from background) */
 
-  --text: #2a2a2a;
-  --text-light: #ffffff;
-  --text-h: #7f1d1d;
+  /* === Brand === */
+  --primary: #e07a3f; /* curry orange */
+  --primary-soft: #c9652f; /* darker hover version */
 
-  --card: #ffffff;
-  --border: #f1e0d6;
+  --accent: #a8d94b; /* lime green */
+  --accent-soft: #d6ef8a; /* softer lime */
 
-  --shadow: rgba(0, 0, 0, 0.08);
+  /* === Text === */
+  --text: #f5f5f2; /* main text (light) */
+  --text-light: #ffffff; /* pure white */
+  --text-h: #e07a3f; /* headings (warm highlight) */
+
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.25);
+  --shadow-strong: 0 20px 60px rgba(0, 0, 0, 0.45);
+  /* === Surfaces === */
+  --card: #1b3b40; /* slightly lifted from bg */
+  --border: #2e4a4f --shadow: rgba(0, 0, 0, 0.08);
+
+  --btn-primary: #e07a3f;
+  --btn-primary-hover: #c9652f;
+  --btn-text: #ffffff;
+
+  --btn-secondary: transparent;
+  --btn-secondary-border: #e07a3f;
+  --btn-secondary-hover: rgba(224, 122, 63, 0.1);
 
   --sans: system-ui, "Segoe UI", Roboto, sans-serif;
   --heading: system-ui, "Segoe UI", Roboto, sans-serif;

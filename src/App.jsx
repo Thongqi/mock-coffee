@@ -6,7 +6,10 @@ import { Outlet } from "react-router";
 
 export function App() {
   const [cart, setCart] = useState([]);
-
+  const count = cart.reduce((acc, current) => {
+    acc += current.quantity;
+    return acc;
+  }, 0);
   return (
     <>
       <nav className={styles.nav}>
@@ -19,7 +22,7 @@ export function App() {
           </li>
           <li>
             <Link to="cart">
-              Cart<span data-testid="cartCount">{cart.length}</span>
+              Cart<span data-testid="cartCount">{count}</span>
             </Link>
           </li>
         </ul>
