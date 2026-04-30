@@ -5,6 +5,10 @@
   font-weight: 600;
 }
 
+.nav img{
+  height: 100px;
+}
+
 ul li {
   list-style: none;
 }
