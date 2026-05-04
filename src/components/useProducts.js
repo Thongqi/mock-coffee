@@ -11,6 +11,7 @@ export function useProducts() {
         if (!res.ok) {
           throw new Error(`Opps some error encounter: ${res.status}`);
         }
+        console.log(res.json());
         return res.json();
       })
       .then((data) => setProducts(data))
