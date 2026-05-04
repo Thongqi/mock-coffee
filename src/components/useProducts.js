@@ -18,7 +18,10 @@ export function useProducts() {
         }
         return res.json();
       })
-      .then((data) => setProducts(data))
+      .then((data) => {
+        setProducts(data);
+        console.log(data);
+      })
       .catch((error) => {
         setError(error);
         console.log(error);
