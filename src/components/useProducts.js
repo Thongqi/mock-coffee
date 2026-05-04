@@ -16,6 +16,7 @@ export function useProducts() {
       .then((data) => setProducts(data))
       .catch((error) => {
         setError(error);
+        console.log(error);
       })
       .finally(() => setLoading(false));
   }, []);
