@@ -1,4 +1,4 @@
-import { Link, useOutletContext } from "react-router";
+import { Link, useNavigate, useOutletContext } from "react-router";
 import styles from "./Cart.module.css";
 
 export function Cart() {
@@ -6,7 +6,7 @@ export function Cart() {
 
   if (cart.length < 1)
     return (
-      <div>
+      <div className={styles.emptyContainer}>
         <h2>Your plate is empty 🍽️</h2>
         <p>
           Looks like you haven’t picked any dishes yet. Let’s fix that—there’s
@@ -27,13 +27,14 @@ export function Cart() {
             <CartCard product={item} setCart={setCart}></CartCard>
           ))}
         </div>
-        <OrderSummary cart={cart}></OrderSummary>
+        <OrderSummary cart={cart} setCart={setCart}></OrderSummary>
       </div>
     </>
   );
 }
 
-export function OrderSummary({ cart }) {
+export function OrderSummary({ cart, setCart }) {
+  const navigate = useNavigate();
   const { count, totalPrice } = cart.reduce(
     (acc, current) => {
       acc.count += current.quantity;
@@ -42,6 +43,12 @@ export function OrderSummary({ cart }) {
     },
     { count: 0, totalPrice: 0 },
   );
+
+  function handleCheckout() {
+    alert("Checkout successfully. Your dishes will be ready soon!");
+    navigate("/order-success");
+    setCart([]);
+  }
 
   return (
     <div className={styles.right}>
@@ -63,6 +70,8 @@ export function OrderSummary({ cart }) {
         <h3 className={styles.orderbold}>Order Total</h3>
         <p className={styles.orderbold}>{totalPrice}</p>
       </div>
+
+      <button onClick={handleCheckout}>Proceed to checkout</button>
     </div>
   );
 }
@@ -96,13 +105,18 @@ export function CartCard({ product, setCart }) {
   }
 
   function handleInput(e) {
-    setCart((prev) =>
-      prev.map((item) =>
-        item.itemID === product.itemID
-          ? { ...item, quantity: e.target.value }
-          : item,
-      ),
-    );
+    if (Number.isNaN(parseInt(e.target.value))) return;
+    if (parseInt(e.target.value) === 0) {
+      handleRemove();
+    } else {
+      setCart((prev) =>
+        prev.map((item) =>
+          item.itemID === product.itemID
+            ? { ...item, quantity: parseInt(e.target.value) }
+            : item,
+        ),
+      );
+    }
   }
 
   function handleRemove() {

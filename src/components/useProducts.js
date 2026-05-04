@@ -6,7 +6,7 @@ export function useProducts() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("/api/api/Restaurant/items")
+    fetch("/api/api/Restaurant/items?limit=5")
       .then((res) => {
         if (!res.ok) {
           throw new Error(`Opps some error encounter: ${res.status}`);

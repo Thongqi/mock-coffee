@@ -1,12 +1,23 @@
-.nav ul {
+.nav {
   display: flex;
-  justify-content: space-around;
-  font-size: 1rem;
-  font-weight: 600;
+  padding: 0 1rem 0 1rem;
+  position: sticky;
+  top: 0;
+  background-color: var(--bg);
 }
 
-.nav img{
-  height: 100px;
+.nav ul {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1rem;
+  font-weight: 600;
+  width: 100%;
+}
+.nav div {
+  margin: auto;
+}
+.nav img {
+  height: 36px;
 }
 
 ul li {

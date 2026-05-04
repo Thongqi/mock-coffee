@@ -1,6 +1,7 @@
 .hero {
   display: flex;
-  height: 450px;
+  height: 85vh;
+  margin: auto;
 }
 
 .left {
@@ -40,4 +41,25 @@
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  justify-content: center;
+}
+
+@media (max-width: 821px) {
+  .hero {
+    height: 400px;
+  }
+
+  .right {
+    overflow: clip;
+  }
+}
+
+@media (max-width: 550px) {
+  .hero .right {
+    display: none;
+  }
+
+  .hero .left {
+    width: 100%;
+  }
 }

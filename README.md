@@ -1,18 +1,12 @@
-# React + Vite
+A modern restaurant web application that allows users to browse dishes, view top picks, and place orders seamlessly. Built with a focus on clean UI, client-side routing, and reliable testing.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- React
+- React Router
+- JavaScript (ES6+)
+- CSS (Custom Properties)
+- Jest + React Testing Library
+- Fetch data from API & Loading and error handling
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Menu api from https://fakerestaurantapi.runasp.net/Docs.html
 
 Photo credit: Photo by <a href="https://unsplash.com/@brunabranco?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Bruna Branco</a> on <a href="https://unsplash.com/photos/black-ceramic-bowl-with-soup-0wn-DdavPa4?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>

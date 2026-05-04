@@ -2,6 +2,7 @@ import { App, ErrorPage } from "./App.jsx";
 import { Shop } from "./components/Shop.jsx";
 import { Home } from "./components/Home.jsx";
 import { Cart } from "./components/Cart.jsx";
+import { OrderConfirmation } from "./components/OrderConfirmation.jsx";
 
 export const routes = [
   {
@@ -21,6 +22,7 @@ export const routes = [
         path: "cart",
         element: <Cart />,
       },
+      { path: "order-success", element: <OrderConfirmation /> },
     ],
   },
 ];

@@ -73,7 +73,7 @@ body {
 }
 
 #root {
-  width: 1126px;
+  /* width: 1126px; */
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
@@ -82,6 +82,11 @@ body {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  position: relative;
+}
+
+#root > div {
+  width: 70vw;
 }
 
 h1,
@@ -126,4 +131,14 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 821px) {
+  #root > div {
+    width: 100%;
+  }
 }

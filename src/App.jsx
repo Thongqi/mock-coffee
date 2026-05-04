@@ -3,7 +3,7 @@ import { useState } from "react";
 import styles from "./App.module.css";
 import { Link } from "react-router";
 import { Outlet } from "react-router";
-import logo from "./assets/logo.png"
+import logo from "./assets/logo.png";
 
 export function App() {
   const [cart, setCart] = useState([]);
@@ -14,7 +14,9 @@ export function App() {
   return (
     <>
       <nav className={styles.nav}>
-        <div><img src={logo}/></div>
+        <div>
+          <img src={logo} />
+        </div>
         <ul>
           <li>
             <Link to="/">Home</Link>

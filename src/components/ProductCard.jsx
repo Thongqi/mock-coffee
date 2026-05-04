@@ -1,13 +1,15 @@
 import { useState } from "react";
 import styles from "./ProductCard.module.css";
+import { useNavigate } from "react-router";
 
 export function ProductCard({ product, handleAddtoCard }) {
   const [added, setAdded] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div key={product.itemID} className={styles.productcard}>
       <img src={product.imageUrl}></img>
-      <div>
+      <div className={styles.descContainer}>
         <p className={styles.itemname}>{product.itemName}</p>
         <p className={styles.desc}>{product.itemDescription}</p>
         <p className={styles.price}>${product.itemPrice}</p>
@@ -27,7 +29,14 @@ export function ProductCard({ product, handleAddtoCard }) {
         >
           Add to Cart
         </button>
-        <button>Buy Now</button>
+        <button
+          onClick={() => {
+            handleAddtoCard();
+            navigate("/cart");
+          }}
+        >
+          Buy Now
+        </button>
       </div>
     </div>
   );

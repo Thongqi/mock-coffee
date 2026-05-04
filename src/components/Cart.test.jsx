@@ -56,26 +56,25 @@ describe("cart item", () => {
 });
 
 describe.only("order summary", () => {
+  const mockCart = [
+    {
+      itemID: 1,
+      itemName: "Sushi",
+      itemDescription: "Fresh salmon sushi",
+      itemPrice: 12,
+      imageUrl: "test.jpg",
+      quantity: 2,
+    },
+    {
+      itemID: 2,
+      itemName: "Susha",
+      itemDescription: "Fresh salmon susa",
+      itemPrice: 34,
+      imageUrl: "test.jpg",
+      quantity: 1,
+    },
+  ];
   it("display total item correctly", () => {
-    const mockCart = [
-      {
-        itemID: 1,
-        itemName: "Sushi",
-        itemDescription: "Fresh salmon sushi",
-        itemPrice: 12,
-        imageUrl: "test.jpg",
-        quantity: 2,
-      },
-      {
-        itemID: 2,
-        itemName: "Susha",
-        itemDescription: "Fresh salmon susa",
-        itemPrice: 34,
-        imageUrl: "test.jpg",
-        quantity: 1,
-      },
-    ];
-
     render(<OrderSummary cart={mockCart}></OrderSummary>);
 
     // expect(screen.getByText(/3 Item(s)/i)).toBeInTheDocument();

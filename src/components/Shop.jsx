@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import { useProducts } from "./useProducts";
 import { ProductCard } from "./ProductCard";
 import styles from "./Shop.module.css";
@@ -8,11 +7,16 @@ export function Shop() {
   const { products, error, loading } = useProducts();
   const [cart, setCart] = useOutletContext();
 
-  if (loading) return <p>Preparing your dishes…</p>;
-  if (error) return <p>Oops! We couldn’t load the menu. Please try again.</p>;
+  if (loading) return <p className={styles.msg}>Preparing the dishes…</p>;
+  if (error)
+    return (
+      <p className={styles.msg}>
+        Oops! We couldn’t load the menu. Please try again.
+      </p>
+    );
 
   return (
-    <div>
+    <div style={{ margin: "auto" }}>
       <div className={styles.header}>
         <h2>Our Menu</h2>
         <p>Freshly prepared dishes made daily with authentic Asian flavors.</p>
