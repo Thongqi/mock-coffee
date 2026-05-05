@@ -6,7 +6,12 @@ export function useProducts() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("https://fakerestaurantapi.runasp.net/api/Restaurant/items")
+    fetch("https://fakerestaurantapi.runasp.net/api/Restaurant/items", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
       .then(async (res) => {
         const text = await res.text();
         console.log(text);
