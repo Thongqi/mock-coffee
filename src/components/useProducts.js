@@ -5,13 +5,36 @@ export function useProducts() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  // useEffect(() => {
+  //   fetch("https://fakerestaurantapi.runasp.net/api/Restaurant/items", {
+  //     headers: {
+  //       'Accept': 'application/json',
+  //     },
+  //   })
+  //     .then(async (res) => {
+  //       const text = await res.text();
+  //       console.log(text);
+  //       if (!res.ok) {
+  //         throw new Error(`Opps some error encounter: ${res.status}`);
+  //       }
+  //       return res.json();
+  //     })
+  //     .then((data) => {
+  //       setProducts(data);
+  //     })
+  //     .catch((error) => {
+  //       setError(error);
+  //       console.log(error);
+  //     })
+  //     .finally(() => setLoading(false));
+  // }, []);
+
   useEffect(() => {
-    fetch("https://fakerestaurantapi.runasp.net/api/Restaurant/items", {
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-    })
+    const API = "https://mock-shoppingcart.pages.dev";
+
+    fetch(
+      `${API}/corsproxy/?apiurl=https://fakerestaurantapi.runasp.net/api/Restaurant/items`,
+    )
       .then(async (res) => {
         const text = await res.text();
         console.log(text);
