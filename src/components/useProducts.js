@@ -12,7 +12,9 @@ export function useProducts() {
         "Content-Type": "application/json",
       },
     })
-      .then((res) => {
+      .then(async (res) => {
+        const text = await res.text();
+        console.log(text);
         if (!res.ok) {
           throw new Error(`Opps some error encounter: ${res.status}`);
         }
@@ -20,7 +22,6 @@ export function useProducts() {
       })
       .then((data) => {
         setProducts(data);
-        console.log(data);
       })
       .catch((error) => {
         setError(error);
