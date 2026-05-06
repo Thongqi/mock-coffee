@@ -5,8 +5,11 @@ export function useProducts() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  const url = "https://fakestoreapi.com/products";
+
+  // const url ="api/api/Restaurant/items"
   useEffect(() => {
-    fetch("api/api/Restaurant/items", {
+    fetch(url, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
