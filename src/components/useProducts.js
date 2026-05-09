@@ -1,3 +1,4 @@
+import handleRequest from "@netlify/vite-plugin-react-router/entry.server.edge";
 import { useState, useEffect } from "react";
 
 export function useProducts() {
@@ -5,9 +6,8 @@ export function useProducts() {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const url = "https://fakestoreapi.com/products";
+  const url = "api/api/Restaurant/items";
 
-  // const url ="api/api/Restaurant/items"
   useEffect(() => {
     fetch(url, {
       method: "GET",
